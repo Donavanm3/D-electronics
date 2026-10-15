@@ -1,0 +1,34 @@
+{
+  "business": {
+    "name": "D's electronic repair & shop",
+    "tagline": "Fast, honest repairs and quality refurbished electronics.",
+    "phone": "(555) 123-4567",
+    "email": "you@example.com",
+    "address": "123 Main St, Your Town, KY",
+    "hours": "Mon–Fri 10am–6pm · Sat 10am–3pm · Sun closed",
+    "announcement": "Free diagnostics on all repairs this month!",
+    "accent": "#22d3ee"
+  },
+  "categories": ["Phones", "Laptops", "Consoles", "Tablets", "Accessories"],
+  "products": [
+    { "id": "p1", "name": "iPhone 13 128GB", "category": "Phones", "price": 389, "condition": "Refurbished – Excellent", "status": "available", "image": "", "description": "Unlocked, new battery (100% health), 30-day warranty.", "featured": true },
+    { "id": "p2", "name": "Dell Latitude 7490", "category": "Laptops", "price": 249, "condition": "Refurbished – Good", "status": "available", "image": "", "description": "i5-8350U, 16GB RAM, 256GB SSD, Windows 11.", "featured": true },
+    { "id": "p3", "name": "Nintendo Switch OLED", "category": "Consoles", "price": 259, "condition": "Used – Like New", "status": "available", "image": "", "description": "Fresh joysticks installed, includes dock and charger.", "featured": false },
+    { "id": "p4", "name": "iPad 9th Gen 64GB", "category": "Tablets", "price": 179, "condition": "Refurbished – Good", "status": "sold", "image": "", "description": "Wi-Fi model, light wear on back.", "featured": false }
+  ],
+  "repairs": [
+    { "id": "r1", "device": "Phones", "service": "Screen replacement", "price": "from $79", "time": "Same day", "active": true },
+    { "id": "r2", "device": "Phones", "service": "Battery replacement", "price": "from $49", "time": "1 hour", "active": true },
+    { "id": "r3", "device": "Phones", "service": "Charging port repair", "price": "from $59", "time": "Same day", "active": true },
+    { "id": "r4", "device": "Laptops", "service": "SSD upgrade + OS install", "price": "from $89", "time": "1–2 days", "active": true },
+    { "id": "r5", "device": "Laptops", "service": "Keyboard / hinge repair", "price": "Quote", "time": "2–4 days", "active": true },
+    { "id": "r6", "device": "Consoles", "service": "HDMI port replacement", "price": "from $99", "time": "2–3 days", "active": true },
+    { "id": "r7", "device": "Consoles", "service": "Joy-Con drift fix", "price": "$25 each", "time": "Same day", "active": true },
+    { "id": "r8", "device": "Tablets", "service": "Glass / digitizer", "price": "from $99", "time": "1–2 days", "active": true }
+  ],
+  "faq": [
+    { "q": "Do you charge for diagnostics?", "a": "Diagnostics are free if you go ahead with the repair." },
+    { "q": "Is there a warranty?", "a": "All repairs and refurbished devices include a 30-day warranty on parts and labor." },
+    { "q": "Do you buy devices?", "a": "Yes! Bring it in or contact us for a quote." }
+  ]
+}

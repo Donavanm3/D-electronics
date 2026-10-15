@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Admin · D's electronic repair &amp; shop</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.layout{display:grid;grid-template-columns:220px 1fr;min-height:100vh}
+aside{background:var(--panel);border-right:1px solid var(--line);padding:20px 14px;position:sticky;top:0;height:100vh}
+aside a{display:block;padding:10px 12px;border-radius:9px;color:var(--muted);text-decoration:none;cursor:pointer;font-weight:500;margin-bottom:2px}
+aside a.on,aside a:hover{background:var(--panel2);color:var(--text)}
+main{padding:28px;max-width:1100px}
+.head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:22px}.head h2{margin:0;flex:1}
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);font-size:14px;vertical-align:middle}
+th{color:var(--muted);font-weight:600;background:var(--panel2)}
+td .thumb{width:44px;height:44px;border-radius:8px;object-fit:cover;background:var(--panel2);display:grid;place-items:center}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid2 .full{grid-column:1/-1}
+label.f{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--muted)}
+.status{font-size:13px;color:var(--muted)}.dirty{color:#fbbf24}
+.pill{font-size:12px;padding:3px 8px;border-radius:99px;background:var(--panel2)}
+.pill.available{color:var(--ok)}.pill.sold{color:var(--bad)}.pill.pending{color:#fbbf24}
+.chiplist{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chiplist span{background:var(--panel2);border:1px solid var(--line);padding:6px 10px;border-radius:99px;display:flex;gap:8px;align-items:center}
+.chiplist button{background:none;border:0;color:var(--bad);cursor:pointer}
+.login{max-width:460px;margin:8vh auto}
+@media(max-width:800px){.layout{grid-template-columns:1fr}aside{position:static;height:auto;display:flex;flex-wrap:wrap}.grid2{grid-template-columns:1fr}.hide-m{display:none}main{padding:16px}}
+</style>
+</head>
+<body>
+
+<div id="loginView" class="wrap login">
+  <div class="box">
+    <div class="logo" style="margin-bottom:16px"><span class="mark">D</span>Admin sign-in</div>
+    <p class="sub">Your edits are saved by committing <code>data.json</code> to your GitHub repo. Enter a GitHub fine-grained token with <b>Contents: read &amp; write</b> on this repo only. It's stored in this browser.</p>
+    <form class="stack" id="loginForm">
+      <label class="f">GitHub username / org<input name="owner" required placeholder="yourname"></label>
+      <label class="f">Repository name<input name="repo" required placeholder="d-electronics"></label>
+      <label class="f">Branch<input name="branch" value="main" required></label>
+      <label class="f">Access token<input name="token" type="password" required placeholder="github_pat_…"></label>
+      <button class="btn primary">Sign in</button>
+      <button type="button" class="btn" id="offlineBtn">Edit offline (export JSON manually)</button>
+    </form>
+    <p class="status" id="loginMsg"></p>
+  </div>
+</div>
+
+<div id="appView" class="layout" hidden>
+  <aside>
+    <div class="logo" style="margin:0 6px 18px"><span class="mark">D</span>Admin</div>
+    <a data-v="products" class="on">🛒 Shop items</a>
+    <a data-v="repairs">🔧 Repairs</a>
+    <a data-v="categories">🏷️ Categories</a>
+    <a data-v="business">🏪 Business info</a>
+    <a data-v="faq">❓ FAQ</a>
+    <a data-v="backup">💾 Backup</a>
+    <hr style="border-color:var(--line);width:100%">
+    <a href="index.html" target="_blank">↗ View site</a>
+    <a id="logout">⎋ Sign out</a>
+  </aside>
+  <main>
+    <div class="head" style="justify-content:flex-end;margin-bottom:8px">
+      <span class="status" id="saveStatus">All changes saved</span>
+      <button class="btn primary" id="saveBtn">Publish changes</button>
+    </div>
+    <div id="view"></div>
+  </main>
+</div>
+
+<div class="modal" id="modal"><div class="box" id="modalBody"></div></div>
+<div class="toast" id="toast"></div>
+<script src="assets/admin.js"></script>
+</body>
+</html>
