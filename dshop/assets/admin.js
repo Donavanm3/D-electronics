@@ -16,7 +16,19 @@ const unb64 = s => decodeURIComponent(escape(atob(s.replace(/\n/g, ''))));
 
 async function load() {
   const r = await fetch(api('data.json') + '?ref=' + cfg.branch + '&t=' + Date.now(), { headers: hdr() });
-  if (!r.ok) throw new Error(r.status === 401 ? 'Bad token' : r.status === 404 ? 'Repo or data.json not found' : 'GitHub error ' + r.status);
+  if (r.status === 404) {
+    // Figure out exactly which part is wrong
+    const repo = await fetch(`https://api.github.com/repos/${cfg.owner}/${cfg.repo}`, { headers: hdr() });
+    if (repo.status === 404) throw new Error(`Repo "${cfg.owner}/${cfg.repo}" not found — check spelling, or the token doesn't have access to this repo`);
+    const info = await repo.json();
+    const br = await fetch(`https://api.github.com/repos/${cfg.owner}/${cfg.repo}/branches/${cfg.branch}`, { headers: hdr() });
+    if (br.status === 404) throw new Error(`Branch "${cfg.branch}" not found — this repo's branch is "${info.default_branch}"`);
+    const root = await fetch(api('') + '?ref=' + cfg.branch, { headers: hdr() });
+    const names = root.ok ? (await root.json()).map(f => f.name) : [];
+    const nested = names.length === 1 ? ` (files look like they're inside the "${names[0]}" folder — move them to the top level)` : '';
+    throw new Error(`data.json isn't in the top level of the repo${nested}. Found: ${names.join(', ') || 'nothing — upload the files first'}`);
+  }
+  if (!r.ok) throw new Error(r.status === 401 ? 'Bad or expired token' : r.status === 403 ? 'Token lacks permission (needs Contents: Read and write)' : 'GitHub error ' + r.status);
   const j = await r.json(); sha = j.sha; D = JSON.parse(unb64(j.content));
 }
 async function save() {
