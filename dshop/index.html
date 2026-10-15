@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>D's electronic repair &amp; shop</title>
+<meta name="description" content="Phone, laptop, console and tablet repair plus quality refurbished electronics.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="announce" id="announce" hidden></div>
+<header class="top"><div class="wrap">
+  <a href="#" class="logo"><span class="mark">D</span><span id="bizName">D's electronic repair &amp; shop</span></a>
+  <button class="btn sm menu-btn" onclick="document.querySelector('nav.links').classList.toggle('open')">☰</button>
+  <nav class="links" onclick="this.classList.remove('open')">
+    <a href="#shop">Shop</a><a href="#repairs">Repairs</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+  </nav>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <h1>Broken device?<br>We fix it. <span style="color:var(--accent)">Need one?</span> We sell it.</h1>
+  <p id="tagline"></p>
+  <div class="cta"><a class="btn primary" href="#repairs">See repair prices</a><a class="btn" href="#shop">Browse the shop</a></div>
+  <div class="stats"><div><b id="statItems">0</b>items in stock</div><div><b id="statRepairs">0</b>repair services</div><div><b>30-day</b>warranty</div></div>
+</div></div>
+
+<section id="shop"><div class="wrap">
+  <h2>Shop</h2><p class="sub">Tested, cleaned and ready to go.</p>
+  <div class="toolbar" id="catBar"></div>
+  <div class="toolbar"><select id="sort" style="max-width:200px">
+    <option value="feat">Featured first</option><option value="low">Price: low → high</option><option value="high">Price: high → low</option></select>
+    <label style="display:flex;align-items:center;gap:6px;color:var(--muted)"><input type="checkbox" id="hideSold" style="width:auto" checked> Hide sold</label>
+    <input class="search" id="q" placeholder="Search items…"></div>
+  <div class="grid" id="products"></div>
+</div></section>
+
+<section id="repairs" style="background:var(--panel2)"><div class="wrap">
+  <h2>What we repair</h2><p class="sub">Typical prices — final quote after a free diagnostic.</p>
+  <div class="repairs" id="repairList"></div>
+</div></section>
+
+<section id="faq" class="faq"><div class="wrap">
+  <h2>FAQ</h2><p class="sub">Quick answers.</p><div id="faqList"></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <h2>Get in touch</h2><p class="sub">Request a repair quote or ask about an item.</p>
+  <div class="contact">
+    <div class="box info" id="info"></div>
+    <div class="box"><form class="stack" id="quoteForm">
+      <input name="name" placeholder="Your name" required>
+      <input name="contact" placeholder="Phone or email" required>
+      <select name="device" id="formDevice"></select>
+      <textarea name="msg" rows="4" placeholder="What's wrong / which item are you interested in?" required></textarea>
+      <button class="btn primary">Send request</button>
+      <small style="color:var(--muted)">Opens your email app with the details filled in.</small>
+    </form></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><span>© <span id="yr"></span> <span id="footName"></span></span><a href="admin.html" style="color:var(--muted)">Admin</a></div></footer>
+
+<div class="modal" id="modal" onclick="if(event.target===this)this.classList.remove('open')"><div class="box" id="modalBody"></div></div>
+<script src="assets/app.js"></script>
+</body>
+</html>
