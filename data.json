@@ -13,7 +13,19 @@
     "Phones",
     "Accessories"
   ],
-  "products": [],
+  "products": [
+    {
+      "id": "pmv9pfn06gcf",
+      "status": "available",
+      "category": "Accessories",
+      "condition": "New",
+      "price": 12,
+      "name": "White computer fan",
+      "description": "brand new white desktop computer fan",
+      "image": "",
+      "featured": false
+    }
+  ],
   "repairs": [
     {
       "id": "rmv9pa6jop1t",
