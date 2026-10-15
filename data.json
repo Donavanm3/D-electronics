@@ -11,86 +11,27 @@
   },
   "categories": [
     "Phones",
-    "Laptops",
-    "Consoles",
-    "Tablets",
     "Accessories"
   ],
   "products": [],
   "repairs": [
     {
-      "id": "r1",
+      "id": "rmv9pa6jop1t",
       "device": "Phones",
-      "service": "Screen replacement",
-      "price": "from $79",
-      "time": "Same day",
-      "active": true
-    },
-    {
-      "id": "r2",
-      "device": "Phones",
-      "service": "Battery replacement",
-      "price": "from $49",
-      "time": "1 hour",
-      "active": true
-    },
-    {
-      "id": "r3",
-      "device": "Phones",
-      "service": "Charging port repair",
-      "price": "from $59",
-      "time": "Same day",
-      "active": true
-    },
-    {
-      "id": "r4",
-      "device": "Laptops",
-      "service": "SSD upgrade + OS install",
-      "price": "from $89",
-      "time": "1–2 days",
-      "active": true
-    },
-    {
-      "id": "r5",
-      "device": "Laptops",
-      "service": "Keyboard / hinge repair",
-      "price": "Quote",
-      "time": "2–4 days",
-      "active": true
-    },
-    {
-      "id": "r6",
-      "device": "Consoles",
-      "service": "HDMI port replacement",
-      "price": "from $99",
-      "time": "2–3 days",
-      "active": true
-    },
-    {
-      "id": "r7",
-      "device": "Consoles",
-      "service": "Joy-Con drift fix",
-      "price": "$25 each",
-      "time": "Same day",
-      "active": true
-    },
-    {
-      "id": "r8",
-      "device": "Tablets",
-      "service": "Glass / digitizer",
-      "price": "from $99",
-      "time": "1–2 days",
-      "active": true
+      "active": true,
+      "service": "SCREEN REPAIR",
+      "price": "from $35",
+      "time": ""
     }
   ],
   "faq": [
     {
       "q": "Do you charge for diagnostics?",
-      "a": "Diagnostics are free if you go ahead with the repair."
+      "a": "Diagnostics are not free but low of charge"
     },
     {
       "q": "Is there a warranty?",
-      "a": "All repairs and refurbished devices include a 30-day warranty on parts and labor."
+      "a": "No warranty, but we will repair it for free if we mess up"
     },
     {
       "q": "Do you buy devices?",
