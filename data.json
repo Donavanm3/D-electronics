@@ -20,8 +20,16 @@
       "device": "Phones",
       "active": true,
       "service": "SCREEN REPAIR",
-      "price": "from $35",
-      "time": ""
+      "price": "from $35.00",
+      "time": "1 - 2 days"
+    },
+    {
+      "id": "rmv9pd4nct7b",
+      "device": "Phones",
+      "active": true,
+      "service": "DIAGNOSTICS",
+      "price": "from $10.00",
+      "time": "10 - 50 min"
     }
   ],
   "faq": [
